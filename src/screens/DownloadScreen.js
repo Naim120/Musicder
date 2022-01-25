@@ -12,7 +12,7 @@ export default class PlayScreen extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`${config.API_URL}/song?id=${this.props.match.params.id}`)
+        axios.get(`${config.API_URL}/song/?query=${this.props.match.params.id}`)
             .then(res => {
                 var song = res.data;
 
