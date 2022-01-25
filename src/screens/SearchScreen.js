@@ -10,7 +10,7 @@ export default class SearchScreen extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`${config.API_URL}/search?query=${new URLSearchParams(this.props.location.search).get('query').replace(/ /gi,"+")}`)
+        axios.get(`${config.API_URL}/result/?query=${new URLSearchParams(this.props.location.search).get('query').replace(/ /gi,"+")}`)
             .then(res => {
                 var songs = res.data;
                 document.title = `${new URLSearchParams(this.props.location.search).get('query')} - Search | Musicder`
